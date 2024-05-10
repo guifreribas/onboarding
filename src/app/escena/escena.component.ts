@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { StepsService } from '../steps.service';
+import { Component, Input } from '@angular/core';
 import { IStep } from '../models/i-step';
 
 @Component({
@@ -10,14 +9,5 @@ import { IStep } from '../models/i-step';
   styleUrl: './escena.component.scss',
 })
 export class EscenaComponent {
-  constructor(private stepService: StepsService) {}
-  steps: IStep[] = [];
-
-  getSteps(): void {
-    this.steps = this.stepService.getSetps();
-  }
-
-  ngOnInit(): void {
-    this.getSteps();
-  }
+  @Input() steps!: IStep[];
 }
