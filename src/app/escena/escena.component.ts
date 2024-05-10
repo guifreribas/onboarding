@@ -10,4 +10,8 @@ import { IStep } from '../models/i-step';
 })
 export class EscenaComponent {
   @Input() steps!: IStep[];
+
+  ngOnInit(): void {
+    console.log(this.steps);
+  }
 }

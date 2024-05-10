@@ -1,4 +1,30 @@
-@for(step of steps; track step.title){
-<h3>{{step.title}}</h3>
-<p>{{step.descripcion}}</p>
-}
+<article>
+  @for(step of steps; track step.title){
+  <article class="card">
+
+    <img class="card__img card__img--{{step.bgcolor}}" src={{step.img}} alt="{{step.title}}">
+    <section class="card__infoContainer">
+      <h3 class="card__title">{{step.title}}</h3>
+      <p class="card__description">{{step.descripcion}}</p>
+      <section class="card__navigation">
+        <div class="card__navDots">
+          <div class="card__navDot card__navDot--active"></div>
+          <div class="card__navDot"></div>
+          <div class="card__navDot"></div>
+        </div>
+        <div class="card__buttons">
+          <button class="card__btn card__btn--back ">
+            <img class="card__btnIcon card__btnIcon--back" src="assets/icons/arrow_black.svg"
+              alt="Black arrow indicates go forward">
+          </button>
+          <button class="card__btn card__btn--forward">
+            <img class="card__btnIcon card__btnIcon--forward" src="assets/icons/arrow_white.svg"
+              alt="White arrow indicates go back">
+          </button>
+        </div>
+      </section>
+    </section>
+
+  </article>
+  }
+</article>
