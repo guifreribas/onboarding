@@ -23,6 +23,11 @@ export class EscenaComponent {
     console.log('goPrevStep', this.currentStep);
   }
 
+  goToStep(step: number): void {
+    this.currentStep = step;
+    console.log('goToStep', this.currentStep);
+  }
+
   ngOnInit(): void {
     console.log(this.steps);
   }
