@@ -10,7 +10,8 @@
         <div class="card__navDots">
           @for(step of steps; track step.title){
           <div class="card__navDot card__navDot--active"
-            [ngClass]="{'card__navDot': true,'card__navDot--active':$index === currentStep  }"></div>
+            [ngClass]="{'card__navDot': true,'card__navDot--active':$index === currentStep  }"
+            (click)="goToStep($index)"></div>
           }
           <!-- <div class="card__navDot card__navDot--active"></div>
           <div class="card__navDot"></div>
