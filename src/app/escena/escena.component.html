@@ -1,11 +1,11 @@
-<article>
-  <!-- @for(step of steps; track step.title){ -->
+<article [@animatedSlide]="currentStep">
+  @for(step of steps; track step.title){
+  @if($index === currentStep){
   <article class="card">
-    <img class="card__img card__img--{{steps[currentStep].bgcolor}}" src={{steps[currentStep].img}}
-      alt="{{steps[currentStep].title}}">
+    <img class="card__img card__img--{{step.bgcolor}}" src={{step.img}} alt="{{step.title}}">
     <section class="card__infoContainer">
-      <h3 class="card__title">{{steps[currentStep].title}}</h3>
-      <p class="card__description">{{steps[currentStep].descripcion}}</p>
+      <h3 class="card__title">{{step.title}}</h3>
+      <p class="card__description">{{step.descripcion}}</p>
       <section class="card__navigation">
         <div class="card__navDots">
           @for(step of steps; track step.title){
@@ -32,5 +32,6 @@
     </section>
 
   </article>
-  <!-- } -->
+  }
+  }
 </article>
